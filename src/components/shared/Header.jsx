@@ -5,10 +5,19 @@ const Header = () => {
   const navItems = (
     <>
       <li>
-        <a>Item 1</a>
+        <a>Home</a>
       </li>
       <li>
-        <a>Item 3</a>
+        <a>All Toys</a>
+      </li>
+      {/* <li>
+        <a>My Toys</a>
+      </li>
+      <li>
+        <a>Add a Toy</a>
+      </li> */}
+      <li>
+        <a>Blogs</a>
       </li>
     </>
   );
@@ -36,20 +45,27 @@ const Header = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 font-medium"
             >
               {navItems}
             </ul>
           </div>
           <Link to="/">
-            <img src="/logo.png" className="h-28 w-28" alt="" />
+            <div className="flex items-center">
+              <img src="/logo.png" className="h-20 w-20" alt="" />
+              <h3 className="text-5xl font-semibold hover:bg-base-300 hover:rounded-xl p-3">
+                Toy Galaxy
+              </h3>
+            </div>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{navItems}</ul>
+          <ul className="menu menu-horizontal px-1 font-medium">{navItems}</ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Get started</a>
+          <Link to="/login" className="btn btn-warning">
+            Login
+          </Link>
         </div>
       </div>
     </div>
