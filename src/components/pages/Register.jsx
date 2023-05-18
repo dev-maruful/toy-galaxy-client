@@ -1,7 +1,38 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Register = () => {
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const { signIn } = useContext(AuthContext);
+
+  const handleSignIn = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const photo = form.photo.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+
+    if (password.length < 6) {
+      setError("Password must be at least 6 characters");
+      return;
+    }
+
+    signIn(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        form.reset();
+        setSuccess("Registration successful, welcome to Toy Galaxy");
+      })
+      .catch((error) => {
+        setError(error.code);
+      });
+  };
+
   return (
     <div>
       <div className="hero my-10">
@@ -10,7 +41,7 @@ const Register = () => {
             Please Register
           </h2>
           <div className="card w-full shadow-2xl bg-base-100">
-            <form className="card-body">
+            <form onSubmit={handleSignIn} className="card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text text-base">Name</span>
@@ -20,6 +51,7 @@ const Register = () => {
                   name="name"
                   placeholder="name"
                   className="input input-bordered"
+                  required
                 />
               </div>
               <div className="form-control">
@@ -31,6 +63,7 @@ const Register = () => {
                   name="email"
                   placeholder="email"
                   className="input input-bordered"
+                  required
                 />
               </div>
               <div className="form-control">
@@ -42,6 +75,7 @@ const Register = () => {
                   name="password"
                   placeholder="password"
                   className="input input-bordered"
+                  required
                 />
               </div>
               <div className="form-control">
@@ -68,6 +102,16 @@ const Register = () => {
               </div>
             </form>
           </div>
+          {error && (
+            <p className="text-center mt-5 text-error text-lg font-semibold">
+              {error}
+            </p>
+          )}
+          {success && (
+            <p className="text-center mt-5 text-success text-lg font-semibold">
+              {success}
+            </p>
+          )}
         </div>
       </div>
     </div>

@@ -1,24 +1,56 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const { googleLogin, login } = useContext(AuthContext);
+
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+
+    login(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        form.reset();
+        setSuccess("Login successful!");
+      })
+      .catch((err) => setError(err.code));
+  };
+
   return (
     <div>
       <div className="hero my-10">
         <div className="hero-content block">
           <h2 className="text-center text-4xl font-bold mb-5">Please Login</h2>
           <div className="card w-full shadow-2xl bg-base-100">
-            <form className="card-body">
+            <form onSubmit={handleLogin} className="card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text text-base">Email</span>
                 </label>
                 <input
                   type="email"
-                  placeholder="email"
                   name="email"
+                  placeholder="email"
                   className="input input-bordered"
+                  required
                 />
               </div>
               <div className="form-control">
@@ -46,11 +78,24 @@ const Login = () => {
             </form>
             <p className="text-center mb-1 text-sm">or login with</p>
             <div className="text-center mb-3">
-              <button className="btn btn-circle bg-primary border-none">
+              <button
+                onClick={handleGoogleLogin}
+                className="btn btn-circle bg-primary border-none"
+              >
                 <FaGoogle></FaGoogle>
               </button>
             </div>
           </div>
+          {error && (
+            <p className="text-center mt-5 text-error text-lg font-semibold">
+              {error}
+            </p>
+          )}
+          {success && (
+            <p className="text-center mt-5 text-success text-lg font-semibold">
+              {success}
+            </p>
+          )}
         </div>
       </div>
     </div>
