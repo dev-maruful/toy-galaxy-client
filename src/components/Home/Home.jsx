@@ -3,6 +3,7 @@ import Banner from "./Banner";
 import PhotoGallery from "./PhotoGallery";
 import ShopByCategory from "./ShopByCategory";
 import BlogPost from "./BlogPost";
+import Newsletter from "./Newsletter";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <PhotoGallery></PhotoGallery>
       <ShopByCategory></ShopByCategory>
       <BlogPost></BlogPost>
+      <Newsletter></Newsletter>
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React from "react";
 
 const BlogPost = () => {
   return (
-    <div className="mb-20">
+    <div className="mb-28">
       <h1 className="text-5xl font-bold leading-[50px] text-center mb-5">
         Blog Post
       </h1>
