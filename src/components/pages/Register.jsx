@@ -1,11 +1,12 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Register = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const { signIn } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleSignIn = (event) => {
     event.preventDefault();
@@ -27,6 +28,7 @@ const Register = () => {
         console.log(loggedUser);
         form.reset();
         setSuccess("Registration successful, welcome to Toy Galaxy");
+        navigate("/");
       })
       .catch((error) => {
         setError(error.code);
