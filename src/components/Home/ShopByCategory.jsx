@@ -23,7 +23,7 @@ const ShopByCategory = () => {
       </h1>
       <Tabs>
         <TabList>
-          <Tab>Marvel</Tab>
+          <Tab>Avengers</Tab>
           <Tab>Star Wars</Tab>
           <Tab>Transformers</Tab>
         </TabList>

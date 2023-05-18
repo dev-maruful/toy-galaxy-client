@@ -28,7 +28,7 @@ const Header = () => {
         <a>Add a Toy</a>
       </li> */}
       <li>
-        <a>Blogs</a>
+        <Link to="/blogs">Blogs</Link>
       </li>
     </>
   );
