@@ -5,7 +5,7 @@ const Header = () => {
   const navItems = (
     <>
       <li>
-        <a>Home</a>
+        <Link to="/">Home</Link>
       </li>
       <li>
         <a>All Toys</a>
@@ -63,7 +63,7 @@ const Header = () => {
           <ul className="menu menu-horizontal px-1 font-medium">{navItems}</ul>
         </div>
         <div className="navbar-end">
-          <Link to="/login" className="btn btn-warning">
+          <Link to="/login" className="btn btn-primary">
             Login
           </Link>
         </div>
