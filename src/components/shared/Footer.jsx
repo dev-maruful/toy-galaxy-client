@@ -11,7 +11,7 @@ import {
 const Footer = () => {
   return (
     <div>
-      <footer className="p-10 bg-warning text-black rounded-t-lg">
+      <footer className="p-10 bg-error text-black rounded-t-lg">
         <div className="flex">
           <div className="w-1/2 flex items-center">
             <div>
