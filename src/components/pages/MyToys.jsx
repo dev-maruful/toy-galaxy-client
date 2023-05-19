@@ -53,11 +53,13 @@ const MyToys = () => {
                   ${singleToyDetails?.price}
                 </td>
                 <td className="text-lg font-medium text-center">
-                  ${singleToyDetails?.availableQuantity}
+                  {singleToyDetails?.availableQuantity} pcs
                 </td>
+
+                {/* update toy modal */}
                 <td className="text-lg font-medium text-center">
-                  <Link to={`/toyDetails/${singleToyDetails?._id}`}>
-                    <button className="btn btn-outline btn-primary">
+                  <Link to={`/updateToy/${singleToyDetails?._id}`}>
+                    <button className="btn btn-primary btn-outline">
                       Update
                     </button>
                   </Link>
