@@ -17,11 +17,11 @@ const Header = () => {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <a>All Toys</a>
+        <Link to="/alltoys">All Toys</Link>
       </li>
       {user && (
         <li>
-          <a>My Toys</a>
+          <Link to="/mytoys">My Toys</Link>
         </li>
       )}
       {user && (
