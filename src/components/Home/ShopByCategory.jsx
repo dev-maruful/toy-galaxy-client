@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
+import { Link } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
@@ -11,7 +12,6 @@ const ShopByCategory = () => {
     fetch("http://localhost:5000/toyGalaxyCategory")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setCategoryProducts(data);
       });
   }, []);
@@ -54,7 +54,11 @@ const ShopByCategory = () => {
                   />
                 </div>
                 <div className="card-actions">
-                  <button className="btn btn-primary">View Details</button>
+                  <Link to={`/toyGalaxyCategory/${categoryProducts[0]?._id}`}>
+                    <button className="btn btn-outline btn-primary">
+                      View Details
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -82,7 +86,11 @@ const ShopByCategory = () => {
                   />
                 </div>
                 <div className="card-actions">
-                  <button className="btn btn-primary">View Details</button>
+                  <Link to={`/toyGalaxyCategory/${categoryProducts[4]?._id}`}>
+                    <button className="btn btn-outline btn-primary">
+                      View Details
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -114,7 +122,11 @@ const ShopByCategory = () => {
                   />
                 </div>
                 <div className="card-actions">
-                  <button className="btn btn-primary">View Details</button>
+                  <Link to={`/toyGalaxyCategory/${categoryProducts[2]?._id}`}>
+                    <button className="btn btn-outline btn-primary">
+                      View Details
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -142,7 +154,11 @@ const ShopByCategory = () => {
                   />
                 </div>
                 <div className="card-actions">
-                  <button className="btn btn-primary">View Details</button>
+                  <Link to={`/toyGalaxyCategory/${categoryProducts[5]?._id}`}>
+                    <button className="btn btn-outline btn-primary">
+                      View Details
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -174,7 +190,11 @@ const ShopByCategory = () => {
                   />
                 </div>
                 <div className="card-actions">
-                  <button className="btn btn-primary">View Details</button>
+                  <Link to={`/toyGalaxyCategory/${categoryProducts[1]?._id}`}>
+                    <button className="btn btn-outline btn-primary">
+                      View Details
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -202,7 +222,11 @@ const ShopByCategory = () => {
                   />
                 </div>
                 <div className="card-actions">
-                  <button className="btn btn-primary">View Details</button>
+                  <Link to={`/toyGalaxyCategory/${categoryProducts[3]?._id}`}>
+                    <button className="btn btn-outline btn-primary">
+                      View Details
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>

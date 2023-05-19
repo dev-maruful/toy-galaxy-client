@@ -18,7 +18,7 @@ const Newsletter = () => {
           </p>
           <div className="flex items-center justify-center">
             <input
-              className="pl-3 py-3 border border-gray-300 rounded-full w-2/4 mr-2"
+              className="px-3 py-3 border border-gray-300 rounded-full w-2/4 mr-2"
               type="text"
               placeholder="your email address"
             />

@@ -24,9 +24,11 @@ const Header = () => {
           <a>My Toys</a>
         </li>
       )}
-      {/* <li>
-        <a>Add a Toy</a>
-      </li> */}
+      {user && (
+        <li>
+          <Link to="/addatoy">Add a Toy</Link>
+        </li>
+      )}
       <li>
         <Link to="/blogs">Blogs</Link>
       </li>
