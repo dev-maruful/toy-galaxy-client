@@ -1,21 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 
 const AllToys = () => {
+  const [searchText, setSearchText] = useState("");
+  const [toysDetails, setToysDetails] = useState([]);
   const allToysDetails = useLoaderData();
-  console.log(allToysDetails);
+  useEffect(() => {
+    setToysDetails(allToysDetails);
+  }, []);
+
+  const handleSearch = () => {
+    fetch(`http://localhost:5000/toySearchByName/${searchText}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setToysDetails(data);
+      });
+  };
 
   return (
     <div className="mt-10 mb-28">
       <div className="text-center mb-10">
         <input
+          onChange={(e) => setSearchText(e.target.value)}
           className="border border-primary rounded-full pl-2 py-2 mr-1"
           type="search"
           placeholder="search by name"
           name="search"
           id="search"
         />
-        <button className="btn btn-primary rounded-full">Search</button>
+        <button onClick={handleSearch} className="btn btn-primary rounded-full">
+          Search
+        </button>
       </div>
       <div className="overflow-x-auto">
         <table className="table table-compact w-full">
@@ -35,7 +50,7 @@ const AllToys = () => {
             </tr>
           </thead>
           <tbody>
-            {allToysDetails.map((singleToyDetails, index) => (
+            {toysDetails.map((singleToyDetails, index) => (
               <tr key={singleToyDetails?._id}>
                 <th className="text-lg">{index + 1}</th>
                 <td className="text-lg font-medium text-center">
@@ -68,21 +83,3 @@ const AllToys = () => {
 };
 
 export default AllToys;
-
-/**
- * <tbody>
-            <tr>
-              <th>1</th>
-              <td>Cy Ganderton</td>
-              <td>Quality Control Specialist</td>
-              <td>Littel, Schaden and Vandervort</td>
-              <td>Canada</td>
-              <td>12/16/2020</td>
-              <td>
-                <button className="btn btn-primary btn-outline">
-                  View Details
-                </button>
-              </td>
-            </tr>
-          </tbody>
- */
