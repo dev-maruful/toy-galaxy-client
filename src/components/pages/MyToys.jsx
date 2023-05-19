@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
-import { Link } from "react-router-dom";
+import ToyDetailsForUpdateAndDelete from "./ToyDetailsForUpdateAndDelete";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -37,39 +37,13 @@ const MyToys = () => {
           </thead>
           <tbody>
             {myToys.map((singleToyDetails, index) => (
-              <tr key={singleToyDetails?._id}>
-                <th className="text-lg">{index + 1}</th>
-                <td className="text-lg font-medium text-center">
-                  {singleToyDetails?.name}
-                </td>
-                <td className="text-center">
-                  <div className="avatar">
-                    <div className="w-24 rounded">
-                      <img src={singleToyDetails?.photo} />
-                    </div>
-                  </div>
-                </td>
-                <td className="text-lg font-medium text-center">
-                  ${singleToyDetails?.price}
-                </td>
-                <td className="text-lg font-medium text-center">
-                  {singleToyDetails?.availableQuantity} pcs
-                </td>
-
-                {/* update toy modal */}
-                <td className="text-lg font-medium text-center">
-                  <Link to={`/updateToy/${singleToyDetails?._id}`}>
-                    <button className="btn btn-primary btn-outline">
-                      Update
-                    </button>
-                  </Link>
-                </td>
-                <td>
-                  <Link to={`/toyDetails/${singleToyDetails?._id}`}>
-                    <button className="btn btn-error">Delete</button>
-                  </Link>
-                </td>
-              </tr>
+              <ToyDetailsForUpdateAndDelete
+                key={singleToyDetails._id}
+                index={index}
+                singleToyDetails={singleToyDetails}
+                myToys={myToys}
+                setMyToys={setMyToys}
+              ></ToyDetailsForUpdateAndDelete>
             ))}
           </tbody>
         </table>

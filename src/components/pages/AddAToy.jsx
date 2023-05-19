@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddAToy = () => {
   const { user } = useContext(AuthContext);
@@ -30,20 +31,32 @@ const AddAToy = () => {
     };
     console.log(productDetails);
 
-    fetch("http://localhost:5000/allToysDetails", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(productDetails),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.insertedId) {
-          alert("toy added successfully");
-        }
-      });
+    Swal.fire({
+      title: "Are you sure?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, add it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch("http://localhost:5000/allToysDetails", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(productDetails),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.insertedId) {
+              Swal.fire("Created!", "Your toy has been added.", "success");
+              form.reset();
+            }
+          });
+      }
+    });
   };
 
   return (

@@ -3,7 +3,7 @@ import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
 import { useLoaderData } from "react-router-dom";
 
-const ToyFullDetails = () => {
+const ToyDetailsForAllToys = () => {
   const toyDetails = useLoaderData();
   console.log(toyDetails);
   const {
@@ -52,4 +52,4 @@ const ToyFullDetails = () => {
   );
 };
 
-export default ToyFullDetails;
+export default ToyDetailsForAllToys;

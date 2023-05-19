@@ -5,10 +5,10 @@ import Login from "../components/pages/Login";
 import Register from "../components/pages/Register";
 import Blogs from "../components/pages/Blogs";
 import AddAToy from "../components/pages/AddAToy";
-import ToyDetails from "../components/pages/ToyDetails";
+import ToyDetailsForCategory from "../components/pages/ToyDetailsForCategory";
 import AllToys from "../components/pages/AllToys";
 import MyToys from "../components/pages/MyToys";
-import ToyFullDetails from "../components/pages/ToyFullDetails";
+import ToyDetailsForAllToys from "../components/pages/ToyDetailsForAllToys";
 import UpdateToy from "../components/pages/UpdateToy";
 
 const router = createBrowserRouter([
@@ -38,7 +38,7 @@ const router = createBrowserRouter([
       },
       {
         path: "toyGalaxyCategory/:id",
-        element: <ToyDetails></ToyDetails>,
+        element: <ToyDetailsForCategory></ToyDetailsForCategory>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/toyGalaxyCategory/${params.id}`),
       },
@@ -53,7 +53,7 @@ const router = createBrowserRouter([
       },
       {
         path: "toyDetails/:id",
-        element: <ToyFullDetails></ToyFullDetails>,
+        element: <ToyDetailsForAllToys></ToyDetailsForAllToys>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/alltoysDetails/${params.id}`),
       },

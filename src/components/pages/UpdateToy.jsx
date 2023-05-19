@@ -1,5 +1,6 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const UpdateToy = () => {
   const toyDetails = useLoaderData();
@@ -14,17 +15,31 @@ const UpdateToy = () => {
     const description = form.description.value;
     const updatedInfo = { price, availableQuantity, description };
 
-    fetch(`http://localhost:5000/updateToy/${_id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(updatedInfo),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      });
+    Swal.fire({
+      title: "Are you sure?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, update it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/updateToy/${_id}`, {
+          method: "PUT",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(updatedInfo),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.modifiedCount > 0) {
+              Swal.fire("Deleted!", "Your toy has been updated.", "success");
+            }
+          });
+      }
+    });
   };
 
   return (
