@@ -17,16 +17,16 @@ const Header = () => {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/alltoys">All Toys</Link>
+        <Link to="/allToys">All Toys</Link>
       </li>
       {user && (
         <li>
-          <Link to="/mytoys">My Toys</Link>
+          <Link to="/myToys">My Toys</Link>
         </li>
       )}
       {user && (
         <li>
-          <Link to="/addatoy">Add a Toy</Link>
+          <Link to="/addAToy">Add a Toy</Link>
         </li>
       )}
       <li>

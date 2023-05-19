@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const AllToys = () => {
   const [searchText, setSearchText] = useState("");
@@ -69,9 +69,11 @@ const AllToys = () => {
                   {singleToyDetails?.availableQuantity} pcs
                 </td>
                 <td>
-                  <button className="btn btn-primary btn-outline">
-                    View Details
-                  </button>
+                  <Link to={`/toyDetails/${singleToyDetails?._id}`}>
+                    <button className="btn btn-outline btn-primary">
+                      View Details
+                    </button>
+                  </Link>
                 </td>
               </tr>
             ))}

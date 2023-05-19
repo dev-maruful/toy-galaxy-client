@@ -138,7 +138,7 @@ const AddAToy = () => {
                     </span>
                   </label>
                   <input
-                    type="text"
+                    type="number"
                     required
                     placeholder="price (write in dollar)"
                     name="price"

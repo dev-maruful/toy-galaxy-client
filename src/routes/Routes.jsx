@@ -8,6 +8,7 @@ import AddAToy from "../components/pages/AddAToy";
 import ToyDetails from "../components/pages/ToyDetails";
 import AllToys from "../components/pages/AllToys";
 import MyToys from "../components/pages/MyToys";
+import ToyFullDetails from "../components/pages/ToyFullDetails";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
         element: <Blogs></Blogs>,
       },
       {
-        path: "addatoy",
+        path: "addAToy",
         element: <AddAToy></AddAToy>,
       },
       {
@@ -41,13 +42,19 @@ const router = createBrowserRouter([
           fetch(`http://localhost:5000/toyGalaxyCategory/${params.id}`),
       },
       {
-        path: "alltoys",
+        path: "allToys",
         element: <AllToys></AllToys>,
         loader: () => fetch("http://localhost:5000/allToysDetails"),
       },
       {
-        path: "mytoys",
+        path: "myToys",
         element: <MyToys></MyToys>,
+      },
+      {
+        path: "toyDetails/:id",
+        element: <ToyFullDetails></ToyFullDetails>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/alltoysDetails/${params.id}`),
       },
     ],
   },
