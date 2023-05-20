@@ -13,11 +13,8 @@ const Register = () => {
   const handleSignIn = (event) => {
     event.preventDefault();
     const form = event.target;
-    const name = form.name.value;
-    const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
 
     if (password.length < 6) {
       setError("Password must be at least 6 characters");

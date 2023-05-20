@@ -30,7 +30,6 @@ const ToyDetailsForUpdateAndDelete = ({
         )
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
             if (data.deletedCount > 0) {
               Swal.fire("Deleted!", "Your toy has been deleted.", "success");
               const remaining = myToys.filter((mt) => mt._id !== _id);

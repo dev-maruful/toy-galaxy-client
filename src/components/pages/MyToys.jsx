@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import ToyDetailsForUpdateAndDelete from "./ToyDetailsForUpdateAndDelete";
 import useTitle from "../../hooks/useTitle";
+import { FaAngleDown } from "react-icons/fa";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -41,19 +42,20 @@ const MyToys = () => {
           Add some toys to view here
         </h1>
       )}
-      <div className="dropdown">
-        <label tabIndex={0} className="btn m-1">
-          Click
+      <div className="dropdown dropdown-end flex flex-col items-end mb-5">
+        <label tabIndex={0} className="btn btn-primary btn-outline m-1">
+          <FaAngleDown></FaAngleDown>{" "}
+          <span className="ml-2">Sort By Price</span>
         </label>
         <ul
           tabIndex={0}
           className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
         >
           <li>
-            <button onClick={handleAscending}>Item 1</button>
+            <button onClick={handleAscending}>Minimum - Maximum</button>
           </li>
           <li>
-            <button onClick={handleDescending}>Item 2</button>
+            <button onClick={handleDescending}>Maximum - Minimum</button>
           </li>
         </ul>
       </div>

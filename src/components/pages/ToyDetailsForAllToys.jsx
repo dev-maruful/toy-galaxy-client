@@ -7,7 +7,6 @@ import useTitle from "../../hooks/useTitle";
 const ToyDetailsForAllToys = () => {
   useTitle("Toy Details");
   const toyDetails = useLoaderData();
-  console.log(toyDetails);
   const {
     availableQuantity,
     description,
@@ -17,8 +16,6 @@ const ToyDetailsForAllToys = () => {
     rating,
     sellerEmail,
     sellerName,
-    subcategory,
-    _id,
   } = toyDetails;
 
   return (

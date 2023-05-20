@@ -31,7 +31,6 @@ const AddAToy = () => {
       availableQuantity,
       description,
     };
-    console.log(productDetails);
 
     Swal.fire({
       title: "Are you sure?",
@@ -54,7 +53,6 @@ const AddAToy = () => {
         )
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
             if (data.insertedId) {
               Swal.fire("Toy Added!", "Your toy has been added.", "success");
               form.reset();
