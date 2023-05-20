@@ -47,12 +47,17 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/toyGalaxyCategory/${params.id}`),
+          fetch(
+            `https://assignment-11-server-iota-brown.vercel.app/toyGalaxyCategory/${params.id}`
+          ),
       },
       {
         path: "allToys",
         element: <AllToys></AllToys>,
-        loader: () => fetch("http://localhost:5000/allToysDetails"),
+        loader: () =>
+          fetch(
+            "https://assignment-11-server-iota-brown.vercel.app/allToysDetails"
+          ),
       },
       {
         path: "myToys",
@@ -66,13 +71,17 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/alltoysDetails/${params.id}`),
+          fetch(
+            `https://assignment-11-server-iota-brown.vercel.app/alltoysDetails/${params.id}`
+          ),
       },
       {
         path: "updateToy/:id",
         element: <UpdateToy></UpdateToy>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/alltoysDetails/${params.id}`),
+          fetch(
+            `https://assignment-11-server-iota-brown.vercel.app/alltoysDetails/${params.id}`
+          ),
       },
     ],
   },

@@ -9,7 +9,9 @@ const ShopByCategory = () => {
   const [categoryProducts, setCategoryProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/toyGalaxyCategory")
+    fetch(
+      "https://assignment-11-server-iota-brown.vercel.app/toyGalaxyCategory"
+    )
       .then((res) => res.json())
       .then((data) => {
         setCategoryProducts(data);

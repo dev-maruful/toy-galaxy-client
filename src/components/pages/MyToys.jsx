@@ -8,7 +8,7 @@ const MyToys = () => {
   const [myToys, setMyToys] = useState([]);
   useTitle("My Toys");
 
-  const url = `http://localhost:5000/allToysDetails?email=${user?.email}`;
+  const url = `https://assignment-11-server-iota-brown.vercel.app/allToysDetails?email=${user?.email}`;
 
   useEffect(() => {
     fetch(url)

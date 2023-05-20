@@ -12,7 +12,9 @@ const AllToys = () => {
   }, []);
 
   const handleSearch = () => {
-    fetch(`http://localhost:5000/toySearchByName/${searchText}`)
+    fetch(
+      `https://assignment-11-server-iota-brown.vercel.app/toySearchByName/${searchText}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setToysDetails(data);

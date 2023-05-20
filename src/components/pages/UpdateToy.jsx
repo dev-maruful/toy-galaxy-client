@@ -26,13 +26,16 @@ const UpdateToy = () => {
       confirmButtonText: "Yes, update it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/updateToy/${_id}`, {
-          method: "PUT",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(updatedInfo),
-        })
+        fetch(
+          `https://assignment-11-server-iota-brown.vercel.app/updateToy/${_id}`,
+          {
+            method: "PUT",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(updatedInfo),
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);

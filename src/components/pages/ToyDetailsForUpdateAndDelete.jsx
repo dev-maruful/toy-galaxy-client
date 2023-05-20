@@ -22,9 +22,12 @@ const ToyDetailsForUpdateAndDelete = ({
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/alltoysDetails/${_id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://assignment-11-server-iota-brown.vercel.app/alltoysDetails/${_id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);

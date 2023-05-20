@@ -42,13 +42,16 @@ const AddAToy = () => {
       confirmButtonText: "Yes, add it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch("http://localhost:5000/allToysDetails", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(productDetails),
-        })
+        fetch(
+          "https://assignment-11-server-iota-brown.vercel.app/allToysDetails",
+          {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(productDetails),
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
