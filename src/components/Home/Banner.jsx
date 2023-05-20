@@ -9,7 +9,7 @@ const Banner = () => {
           className="rounded-lg shadow-2xl"
         />
         <div>
-          <h1 className="text-5xl font-bold leading-[50px]">
+          <h1 className="text-3xl md:text-5xl font-bold md:leading-[50px]">
             Discover Endless Adventures Where Imagination Knows No Bounds!
           </h1>
           <p className="py-6 font-medium">

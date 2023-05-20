@@ -11,6 +11,7 @@ import MyToys from "../components/pages/MyToys";
 import ToyDetailsForAllToys from "../components/pages/ToyDetailsForAllToys";
 import UpdateToy from "../components/pages/UpdateToy";
 import ErrorPage from "../components/pages/ErrorPage";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -40,7 +41,11 @@ const router = createBrowserRouter([
       },
       {
         path: "toyGalaxyCategory/:id",
-        element: <ToyDetailsForCategory></ToyDetailsForCategory>,
+        element: (
+          <PrivateRoute>
+            <ToyDetailsForCategory></ToyDetailsForCategory>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/toyGalaxyCategory/${params.id}`),
       },
@@ -55,7 +60,11 @@ const router = createBrowserRouter([
       },
       {
         path: "toyDetails/:id",
-        element: <ToyDetailsForAllToys></ToyDetailsForAllToys>,
+        element: (
+          <PrivateRoute>
+            <ToyDetailsForAllToys></ToyDetailsForAllToys>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/alltoysDetails/${params.id}`),
       },

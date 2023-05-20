@@ -11,8 +11,8 @@ import {
 const Footer = () => {
   return (
     <div>
-      <footer className="p-10 bg-error text-black rounded-t-lg">
-        <div className="flex">
+      <footer className="p-5 md:p-10 bg-error text-black rounded-t-lg">
+        <div className="flex gap-5 md:gap-0">
           <div className="w-1/2 flex items-center">
             <div>
               <img src="/logo.png" className="h-28 w-28" alt="" />

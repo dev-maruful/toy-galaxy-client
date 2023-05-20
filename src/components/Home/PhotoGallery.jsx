@@ -6,7 +6,7 @@ const PhotoGallery = () => {
       <h1 className="text-5xl font-bold leading-[50px] text-center mb-5">
         Photo Gallery
       </h1>
-      <div className="divide-y rounded-lg">
+      <div className="divide-y rounded-lg p-3 md:p-0">
         <div className="grid grid-cols-3 divide-x">
           <div>
             <img
@@ -23,7 +23,7 @@ const PhotoGallery = () => {
           </div>
           <div>
             <img
-              className="md:rounded-tr-3xl"
+              className="rounded-tr-3xl"
               src="https://images.unsplash.com/photo-1608889345749-630640d94426?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YXZlbmdlcnMlMjB0b3lzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
               alt=""
             />

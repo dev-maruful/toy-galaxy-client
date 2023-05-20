@@ -6,8 +6,8 @@ const BlogPost = () => {
       <h1 className="text-5xl font-bold leading-[50px] text-center mb-5">
         Blog Post
       </h1>
-      <div className="flex gap-10">
-        <div className="card w-1/3 bg-base-100 shadow-xl">
+      <div className="md:flex gap-10 p-3 md:p-0">
+        <div className="card w-full md:w-1/3 bg-base-100 mb-10 md:mb-0 shadow-xl">
           <figure>
             <img
               src="https://images.unsplash.com/photo-1512572525676-f9b59951929e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dHJhbnNmb3JtZXJzJTIwdG95fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
@@ -26,15 +26,15 @@ const BlogPost = () => {
             </p>
           </div>
         </div>
-        <div className="w-2/3">
-          <div className="card h-72 mb-10 card-side bg-base-100 shadow-xl">
-            <figure className="w-1/2">
+        <div className="w-full md:w-2/3">
+          <div className="card md:h-72 mb-10 md:card-side bg-base-100 shadow-xl">
+            <figure className="w-full md:w-1/2">
               <img
                 src="https://images.unsplash.com/photo-1608889175157-718b6205a50d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGF2ZW5nZXJzJTIwdG95fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
                 alt=""
               />
             </figure>
-            <div className="card-body w-1/2">
+            <div className="card-body w-full md:w-1/2">
               <h2 className="card-title text-3xl font-bold">Deadpool</h2>
               <p className="font-medium">
                 The "Merc with a Mouth," is a charismatic and irreverent
@@ -46,14 +46,14 @@ const BlogPost = () => {
               </p>
             </div>
           </div>
-          <div className="card h-72 card-side bg-base-100 shadow-xl">
-            <figure className="w-1/2">
+          <div className="card md:h-72 md:card-side bg-base-100 shadow-xl">
+            <figure className="w-full md:w-1/2">
               <img
                 src="https://images.unsplash.com/photo-1608889453710-95a45def16f7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fGF2ZW5nZXJzJTIwdG95fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
                 alt=""
               />
             </figure>
-            <div className="card-body w-1/2">
+            <div className="card-body w-full md:w-1/2">
               <h2 className="card-title text-3xl font-bold">Star Wars</h2>
               <p className="font-medium">
                 A groundbreaking space-fantasy franchise, transports audiences

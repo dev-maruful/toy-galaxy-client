@@ -21,7 +21,7 @@ const ShopByCategory = () => {
       <h1 className="text-5xl font-bold leading-[50px] text-center mb-5">
         Shop By Category
       </h1>
-      <Tabs>
+      <Tabs className={`p-3 md:p-0`}>
         <TabList>
           <Tab>Avengers</Tab>
           <Tab>Star Wars</Tab>
@@ -34,14 +34,14 @@ const ShopByCategory = () => {
               <figure>
                 <img src={categoryProducts[0]?.picture} alt="" />
               </figure>
-              <div className="card-body">
-                <h2 className="card-title text-2xl font-semibold">
+              <div className="card-body p-3 md:p-6">
+                <h2 className="card-title text-xl md:text-2xl font-bold">
                   {categoryProducts[0]?.name}
                 </h2>
                 <p className="my-1 font-medium">
                   Price : {categoryProducts[0]?.price}
                 </p>
-                <div className="flex items-center">
+                <div className="flex flex-col md:flex-row md:items-center">
                   <p className="mb-3 font-medium">
                     Ratings : {categoryProducts[0]?.rating}
                   </p>
@@ -66,14 +66,14 @@ const ShopByCategory = () => {
               <figure>
                 <img src={categoryProducts[4]?.picture} alt="" />
               </figure>
-              <div className="card-body">
-                <h2 className="card-title text-2xl font-semibold">
+              <div className="card-body p-3 md:p-6">
+                <h2 className="card-title text-xl md:text-2xl font-bold">
                   {categoryProducts[4]?.name}
                 </h2>
                 <p className="my-1 font-medium">
                   Price : {categoryProducts[4]?.price}
                 </p>
-                <div className="flex items-center">
+                <div className="flex flex-col md:flex-row md:items-center">
                   <p className="mb-3 font-medium">
                     Ratings : {categoryProducts[4]?.rating}
                   </p>
@@ -102,14 +102,14 @@ const ShopByCategory = () => {
               <figure>
                 <img src={categoryProducts[2]?.picture} alt="" />
               </figure>
-              <div className="card-body">
-                <h2 className="card-title text-2xl font-semibold">
+              <div className="card-body p-3 md:p-6">
+                <h2 className="card-title text-xl md:text-2xl font-bold">
                   {categoryProducts[2]?.name}
                 </h2>
                 <p className="my-1 font-medium">
                   Price : {categoryProducts[2]?.price}
                 </p>
-                <div className="flex items-center">
+                <div className="flex flex-col md:flex-row md:items-center">
                   <p className="mb-3 font-medium">
                     Ratings : {categoryProducts[2]?.rating}
                   </p>
@@ -134,14 +134,14 @@ const ShopByCategory = () => {
               <figure>
                 <img src={categoryProducts[5]?.picture} alt="" />
               </figure>
-              <div className="card-body">
-                <h2 className="card-title text-2xl font-semibold">
+              <div className="card-body p-3 md:p-6">
+                <h2 className="card-title text-xl md:text-2xl font-bold">
                   {categoryProducts[5]?.name}
                 </h2>
                 <p className="my-1 font-medium">
                   Price : {categoryProducts[5]?.price}
                 </p>
-                <div className="flex items-center">
+                <div className="flex flex-col md:flex-row md:items-center">
                   <p className="mb-3 font-medium">
                     Ratings : {categoryProducts[5]?.rating}
                   </p>
@@ -165,19 +165,19 @@ const ShopByCategory = () => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="flex gap-10">
+          <div className="flex gap-4 md:gap-10">
             <div className="card w-96 bg-base-100 shadow-xl mt-10">
               <figure>
                 <img src={categoryProducts[1]?.picture} alt="" />
               </figure>
-              <div className="card-body">
-                <h2 className="card-title text-2xl font-semibold">
+              <div className="card-body p-3 md:p-6">
+                <h2 className="card-title text-xl md:text-2xl font-bold">
                   {categoryProducts[1]?.name}
                 </h2>
                 <p className="my-1 font-medium">
                   Price : {categoryProducts[1]?.price}
                 </p>
-                <div className="flex items-center">
+                <div className="flex flex-col md:flex-row md:items-center">
                   <p className="mb-3 font-medium">
                     Ratings : {categoryProducts[1]?.rating}
                   </p>
@@ -202,14 +202,14 @@ const ShopByCategory = () => {
               <figure>
                 <img src={categoryProducts[3]?.picture} alt="" />
               </figure>
-              <div className="card-body">
-                <h2 className="card-title text-2xl font-semibold">
+              <div className="card-body p-3 md:p-6">
+                <h2 className="card-title text-xl md:text-2xl font-bold">
                   {categoryProducts[3]?.name}
                 </h2>
                 <p className="my-1 font-medium">
                   Price : {categoryProducts[3]?.price}
                 </p>
-                <div className="flex items-center">
+                <div className="flex flex-col md:flex-row md:items-center">
                   <p className="mb-3 font-medium">
                     Ratings : {categoryProducts[3]?.rating}
                   </p>

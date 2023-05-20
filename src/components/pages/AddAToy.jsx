@@ -51,7 +51,7 @@ const AddAToy = () => {
           .then((data) => {
             console.log(data);
             if (data.insertedId) {
-              Swal.fire("Created!", "Your toy has been added.", "success");
+              Swal.fire("Toy Added!", "Your toy has been added.", "success");
               form.reset();
             }
           });

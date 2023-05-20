@@ -65,8 +65,12 @@ const Header = () => {
           </div>
           <Link to="/">
             <div className="flex items-center">
-              <img src="/logo.png" className="h-20 w-20" alt="" />
-              <h3 className="text-5xl font-semibold hover:bg-base-300 hover:rounded-xl p-3">
+              <img
+                src="/logo.png"
+                className="h-14 w-14 md:h-20 md:w-20"
+                alt=""
+              />
+              <h3 className="text-xl md:text-5xl font-semibold hover:bg-base-300 hover:rounded-xl p-3">
                 Toy Galaxy
               </h3>
             </div>
@@ -76,6 +80,26 @@ const Header = () => {
           <ul className="menu menu-horizontal px-1 font-medium">{navItems}</ul>
         </div>
         <div className="navbar-end">
+          {user && user?.photoURL && (
+            <div
+              className="avatar tooltip tooltip-bottom"
+              data-tip={user?.displayName}
+            >
+              <div className="w-12 mr-1 md:mr-2 rounded-full">
+                <img src={user?.photoURL} />
+              </div>
+            </div>
+          )}
+          {user && !user?.photoURL && (
+            <div
+              className="avatar tooltip tooltip-bottom"
+              data-tip={user?.displayName}
+            >
+              <div className="w-12 rounded-full mr-1 md:mr-2">
+                <img src="https://img.freepik.com/free-icon/user_318-552176.jpg?size=626&ext=jpg&ga=GA1.1.857116354.1678803730&semt=sph" />
+              </div>
+            </div>
+          )}
           {user ? (
             <button onClick={handleLogout} className="btn btn-error">
               Logout
