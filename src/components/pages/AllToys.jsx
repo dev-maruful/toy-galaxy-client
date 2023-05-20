@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import useTitle from "../../hooks/useTitle";
 
 const AllToys = () => {
   const [searchText, setSearchText] = useState("");
   const [toysDetails, setToysDetails] = useState([]);
+  useTitle("All Toys");
   const allToysDetails = useLoaderData();
   useEffect(() => {
     setToysDetails(allToysDetails);

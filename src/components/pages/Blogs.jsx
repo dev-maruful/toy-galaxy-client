@@ -1,8 +1,11 @@
 import React from "react";
 import workHard from "../../assets/87979-work-hard.json";
 import Lottie from "lottie-react";
+import useTitle from "../../hooks/useTitle";
 
 const Blogs = () => {
+  useTitle("Blogs");
+
   return (
     <div className="mt-10 mb-28 flex items-center gap-5">
       <div className="w-1/2">
