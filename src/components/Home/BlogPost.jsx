@@ -1,4 +1,7 @@
 import React from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 const BlogPost = () => {
   return (
@@ -27,7 +30,12 @@ const BlogPost = () => {
           </div>
         </div>
         <div className="w-full md:w-2/3">
-          <div className="card md:h-72 mb-10 md:card-side bg-base-100 shadow-xl">
+          <div
+            data-aos-delay="300"
+            data-aos="fade-down"
+            data-aos-duration="1000"
+            className="card md:h-72 mb-10 md:card-side bg-base-100 shadow-xl"
+          >
             <figure className="w-full md:w-1/2">
               <img
                 src="https://images.unsplash.com/photo-1608889175157-718b6205a50d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGF2ZW5nZXJzJTIwdG95fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
@@ -46,7 +54,12 @@ const BlogPost = () => {
               </p>
             </div>
           </div>
-          <div className="card md:h-72 md:card-side bg-base-100 shadow-xl">
+          <div
+            data-aos-delay="300"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            className="card md:h-72 md:card-side bg-base-100 shadow-xl"
+          >
             <figure className="w-full md:w-1/2">
               <img
                 src="https://images.unsplash.com/photo-1608889453710-95a45def16f7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fGF2ZW5nZXJzJTIwdG95fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"

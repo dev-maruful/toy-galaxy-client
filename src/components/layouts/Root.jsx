@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../shared/Header";
 import { Outlet } from "react-router-dom";
 import Footer from "../shared/Footer";
-import { ToastContainer } from "react-toastify";
+import { Toaster } from "react-hot-toast";
 import "react-toastify/dist/ReactToastify.css";
 
 const Root = () => {
@@ -13,7 +13,7 @@ const Root = () => {
         <Outlet></Outlet>
       </div>
       <Footer></Footer>
-      <ToastContainer></ToastContainer>
+      <Toaster></Toaster>
     </>
   );
 };

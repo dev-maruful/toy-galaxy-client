@@ -1,10 +1,18 @@
 import React from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 const Newsletter = () => {
   return (
     <div className="mb-28">
       <div className="grid grid-cols-1 md:grid-cols-3">
-        <div className="flex justify-center md:block">
+        <div
+          data-aos-delay="300"
+          data-aos="fade-down"
+          data-aos-duration="1000"
+          className="flex justify-center md:block"
+        >
           <img
             className="rounded-t-3xl md:rounded-l-3xl h-80 md:h-full"
             src="https://images.unsplash.com/photo-1574047473179-a73921fc1eb6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nzh8fHN0YXIlMjB3YXJzJTIwdG95fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
@@ -29,7 +37,12 @@ const Newsletter = () => {
             </button>
           </div>
         </div>
-        <div className="flex justify-center md:block">
+        <div
+          data-aos-delay="300"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          className="flex justify-center md:block"
+        >
           <img
             className="rounded-b-3xl md:rounded-r-3xl h-80 md:h-full"
             src="https://images.unsplash.com/photo-1608889175638-9322300c46e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGF2ZW5nZXJzJTIwdG95fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
