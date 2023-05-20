@@ -20,6 +20,11 @@ const MyToys = () => {
 
   return (
     <div className="mt-10 mb-28">
+      {myToys.length === 0 && (
+        <h1 className="text-5xl font-bold leading-[50px] text-center mb-10">
+          Add some toys to view here
+        </h1>
+      )}
       <div className="overflow-x-auto">
         <table className="table table-compact w-full">
           <thead>

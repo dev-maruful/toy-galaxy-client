@@ -23,6 +23,11 @@ const AllToys = () => {
 
   return (
     <div className="mt-10 mb-28">
+      {toysDetails.length === 0 && (
+        <h1 className="text-5xl font-bold leading-[50px] text-center mb-5">
+          No Toys Available
+        </h1>
+      )}
       <div className="text-center mb-10">
         <input
           onChange={(e) => setSearchText(e.target.value)}
