@@ -18,6 +18,22 @@ const MyToys = () => {
       });
   }, [url]);
 
+  const handleAscending = () => {
+    fetch(`http://localhost:5000/ascending?email=${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setMyToys(data);
+      });
+  };
+
+  const handleDescending = () => {
+    fetch(`http://localhost:5000/descending?email=${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setMyToys(data);
+      });
+  };
+
   return (
     <div className="mt-10 mb-28">
       {myToys.length === 0 && (
@@ -25,6 +41,22 @@ const MyToys = () => {
           Add some toys to view here
         </h1>
       )}
+      <div className="dropdown">
+        <label tabIndex={0} className="btn m-1">
+          Click
+        </label>
+        <ul
+          tabIndex={0}
+          className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+        >
+          <li>
+            <button onClick={handleAscending}>Item 1</button>
+          </li>
+          <li>
+            <button onClick={handleDescending}>Item 2</button>
+          </li>
+        </ul>
+      </div>
       <div className="overflow-x-auto">
         <table className="table table-compact w-full">
           <thead>
