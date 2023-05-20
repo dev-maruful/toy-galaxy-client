@@ -39,7 +39,7 @@ const UpdateToy = () => {
           .then((res) => res.json())
           .then((data) => {
             if (data.modifiedCount > 0) {
-              Swal.fire("Deleted!", "Your toy has been updated.", "success");
+              Swal.fire("Updated!", "Your toy has been updated.", "success");
             }
           });
       }
