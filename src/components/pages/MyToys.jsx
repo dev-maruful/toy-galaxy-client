@@ -20,7 +20,9 @@ const MyToys = () => {
   }, [url]);
 
   const handleAscending = () => {
-    fetch(`http://localhost:5000/ascending?email=${user?.email}`)
+    fetch(
+      `https://assignment-11-server-iota-brown.vercel.app/ascending?email=${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setMyToys(data);
@@ -28,7 +30,9 @@ const MyToys = () => {
   };
 
   const handleDescending = () => {
-    fetch(`http://localhost:5000/descending?email=${user?.email}`)
+    fetch(
+      `https://assignment-11-server-iota-brown.vercel.app/descending?email=${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setMyToys(data);
